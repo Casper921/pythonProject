@@ -11,7 +11,7 @@ db_name = "/db/prod/ck_dwh/"
 
 def get_secret_value(value):
     ssm = boto3.client('ssm')
-    secret_name=""
+    secret_name = ""
     if value in ("user", "password", "accountid", "copy_to_redshift_arn"):
         secret_name = f'/vryabokon{db_name}{value}'
     else:
