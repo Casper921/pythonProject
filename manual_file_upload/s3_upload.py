@@ -1,7 +1,6 @@
-import boto3
 from boto3 import session
 from botocore.exceptions import BotoCoreError
-from utils import local_path, bucket_name, session
+from manual_file_upload.utils import local_path, bucket_name, session
 
 
 def upload_to_s3(file_name):
