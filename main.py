@@ -1,3 +1,15 @@
-from manual_file_upload.s3_upload import upload_to_s3
+def fast_copy_to_redshift(file_name):
+    from manual_file_upload.s3_upload import upload_to_s3
+    from manual_file_upload.copy_file import copy_file_to_redshift
 
-upload_to_s3("log_export_1691055423")
+    upload_to_s3(file_name)
+    copy_file_to_redshift(file_name, file_name)
+
+
+fast_copy_to_redshift("log_export_1691055423")
+
+
+
+
+
+
