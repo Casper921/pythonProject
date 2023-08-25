@@ -13,6 +13,7 @@ def copy_file_to_redshift(file_name, table_name, delimiter, schema='public'):
                FROM 's3://{bucket_name}/export/{file_name}.csv' 
                IAM_ROLE 'arn:aws:iam::{accountid}:role/{arn}' 
                DELIMITER '{delimiter}'
+               IGNOREHEADER 1
                FORMAT AS CSV"""
 
     execute_query(drop_table)
