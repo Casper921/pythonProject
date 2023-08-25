@@ -48,13 +48,13 @@ def execute_query(query):
     conn.commit()
 
 
-def read_file_header(file_name):
+def read_file_header(file_name, delimiter):
     local_file_path = f"{local_path}/{file_name}.csv"
 
     with open(local_file_path, 'r') as file:
         csv_reader = csv.reader(file)
         header = next(csv_reader)
-        column_list = ';'.join(header).split(';')
+        column_list = delimiter.join(header).split(delimiter)
 
     return column_list
 
